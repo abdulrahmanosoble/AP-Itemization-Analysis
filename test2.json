@@ -1,0 +1,380 @@
+{
+    "Items": [
+        {
+            "1026": {
+                "sumTime": "16:19"
+            }
+        },
+        {
+            "1058": {
+                "sumTime": "18:14"
+            }
+        },
+        {
+            "3136": {
+                "sumTime": "16:27"
+            }
+        },
+        {
+            "3089": {
+                "order": 2,
+                "winRate": "57.38%",
+                "sumTime": "30:22"
+            }
+        },
+        {
+            "3157": {
+                "order": 2,
+                "winRate": "55.39%",
+                "sumTime": "29:52"
+            }
+        },
+        {
+            "3285": {
+                "order": 1,
+                "winRate": "54.58%",
+                "sumTime": "23:24"
+            }
+        },
+        {
+            "3116": {
+                "order": 2,
+                "winRate": "55.58%",
+                "sumTime": "32:04"
+            }
+        },
+        {
+            "3003": {
+                "order": 2,
+                "winRate": "53.19%",
+                "sumTime": "23:48"
+            }
+        },
+        {
+            "3027": {
+                "order": 1,
+                "winRate": "52.69%",
+                "sumTime": "19:10"
+            }
+        },
+        {
+            "3151": {
+                "order": 1,
+                "winRate": "55.48%",
+                "sumTime": "26:31"
+            }
+        },
+        {
+            "3115": {
+                "order": 0,
+                "winRate": "54.40%",
+                "sumTime": "24:10"
+            }
+        },
+        {
+            "3152": {
+                "order": 1,
+                "winRate": "52.04%",
+                "sumTime": "18:55"
+            }
+        },
+        {
+            "3165": {
+                "order": 1,
+                "winRate": "52.28%",
+                "sumTime": "20:48"
+            }
+        },
+        {
+            "3174": {
+                "order": 1,
+                "winRate": "51.43%",
+                "sumTime": "20:41"
+            }
+        }
+    ],
+    "Champions": [
+        {
+            "103": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "84": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "32": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "34": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "1": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "268": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "63": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "69": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "31": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "131": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "60": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "28": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "81": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "9": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "105": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "245": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "3": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "41": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "74": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "30": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "38": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "55": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "10": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "85": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "96": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "7": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "127": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "117": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "99": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "90": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "25": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "76": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "61": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "68": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "13": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "27": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "50": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "134": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "17": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "4": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "161": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "112": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "8": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "101": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "115": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "143": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        },
+        {
+            "26": {
+                "firstBack": [],
+                "mostCommonItems": []
+            }
+        }
+    ]
+}

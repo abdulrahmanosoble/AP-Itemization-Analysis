@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AP Itemization Analysis</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/easytabs.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+
+
+    //  google.load("visualization", "1.1", {packages:["bar"]});
+    //  google.setOnLoadCallback(drawAllChart);
+        google.load("visualization", "1.1", {packages:["bar"]});
+    $.when(
+      $.getJSON('json/Patch511AggregateData.json'),
+      $.getJSON('json/Patch514AggregateData.json')
+  ).done(function(data, d) {
+      console.log(data[2].responseJSON);
+      var items = data[2].responseJSON["Items"];
+      var data2 = d[2].responseJSON
+      for (var i = 0; i < items.length; i++){
+          console.log("Here");
+          $.each(items[i], function(itemId, itemData){
+          $('ul.select-item').append('<li>  <a href="#'+itemId+'"> <img src="http://ddragon.leagueoflegends.com/cdn/5.16.1/img/item/'+itemId+'.png" /> </a> </li>');
+          if(itemData["order"]){
+            $('#tab-container').append('<div id="'+itemId+'" class="data row"> <div id="'+itemId+'-buyTime" class="col-xs-6">  </div>  <div id="'+itemId+'-winRate" class="col-xs-6">   </div>  <div class="common common-first">Most commonly built as major item <span class="order">#'+itemData["order"]+'</span> on patch <span class="order"> 5.11 </span> </div>  <div class="common">Most commonly built as major item <span class="order">#'+data2["Items"][i][itemId]["order"]+'</span> on patch <span class="order"> 5.14 </span></div>');
+          }
+          else{
+            $('#tab-container').append('<div id="'+itemId+'" class="data row"> <div id="'+itemId+'-buyTime" class="col-xs-6">  </div>  <div id="'+itemId+'-winRate" class="col-xs-6"> ');
+          }
+          ;
+
+          var tData = google.visualization.arrayToDataTable([
+            ['', '5.11', '5.14'],
+            ['Average Buy Time', itemData["sumTime"], data2["Items"][i][itemId]["order"]],
+          ]);
+
+          var timeOption = {
+          chart: {
+          title: 'Average Buy Time'
+          },
+          bars: 'vertical', // Required for Material Bar Charts.
+          backgroundColor: '#111',
+          tooltip: {ignoreBounds: true, isHTML: true}
+          };
+          if(i>2){
+          var wData = google.visualization.arrayToDataTable([
+            ['', '5.11', '5.14'],
+            ['Win Rate', "59.93%", "46.23%"]
+          ]);
+
+          var winOption = {
+            chart: {
+              title: 'Win Rate'
+            },
+            bars: 'vertical', // Required for Material Bar Charts.
+            backgroundColor: '#111',
+            tooltip: {ignoreBounds: true, isHTML: true}
+          };
+          console.log(tData);
+          google.setOnLoadCallback(function() {
+              drawChart(itemId+'-buyTime', tData, timeOptions);
+            });
+
+          google.setOnLoadCallback(function() {
+              drawChart(itemId+'-winRate', wData, winOptions);
+          });
+
+        }
+      });
+}
+
+function drawChart(id, data, options){
+    chart = new google.charts.Bar(document.getElementById(id));
+    chart.draw(data,google.charts.Bar.convertOptions(options));
+}
+$('#tab-container').easytabs();
+});
+
+
+      function drawCharts(){
+        var timeCharts = [];
+        var winCharts = [];
+        var timeOptions = [];
+        var winOptions = [];
+        var winData = [];
+        var timeData = [];
+        $.when(
+          $.getJSON('json/Patch511AggregateData.json'),
+          $.getJSON('json/Patch514AggregateData.json')
+          ).done(function(data, d) {
+            console.log(data[2].responseJSON);
+            var items = data[2].responseJSON["Items"];
+            var data2 = d[2].responseJSON;
+
+            for (var i = 0; i < items.length; i++){
+            $.each(items[i], function(itemId, itemData){
+
+            var tData = google.visualization.arrayToDataTable([
+              ['', '5.11', '5.14'],
+              ['Average Buy Time', itemData["sumTime"], data2["Items"][i][itemId]["order"]],
+            ]);
+
+            var timeOption = {
+            chart: {
+            title: 'Average Buy Time'
+            },
+            bars: 'vertical', // Required for Material Bar Charts.
+            backgroundColor: '#111',
+            tooltip: {ignoreBounds: true, isHTML: true}
+        };
+        if(i>2){
+        var wData = google.visualization.arrayToDataTable([
+          ['', '5.11', '5.14'],
+          ['Win Rate', "59.93%", "46.23%"]
+        ]);
+
+        var winOption = {
+          chart: {
+            title: 'Win Rate'
+          },
+          bars: 'vertical', // Required for Material Bar Charts.
+          backgroundColor: '#111',
+          tooltip: {ignoreBounds: true, isHTML: true}
+        };
+      }
+              timeOptions.push(timeOption);
+              timeData.push(tData);
+              winOptions.push(winOption);
+              winData.push(wData);
+              timeCharts.push(new google.charts.Bar(document.getElementById(itemId+'-buyTime')));
+              winCharts.push(new google.charts.Bar(document.getElementById(itemId+'-winRate')));
+              console.log(timeData[i])
+              timeCharts[i].draw(timeData[i], google.charts.Bar.convertOptions(timeOptions[i]));
+              if(i>2){
+                winCharts[i].draw(winData[i], google.charts.Bar.convertOptions(winOptions[i]));
+              }
+      });}
+
+      });
+    }
+
+
+
+
+
+
+
+
+
+      function drawAllChart() {
+          drawCharts();
+      }
+    </script>
+
+
+</head>
+
+<body>
+  <script type="text/javascript">
+  $(document).ready(function() {
+      console.log( "ready!" );
+  });
+  </script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Items</a>
+                    </li>
+                    <li>
+                        <a href="#">Champions</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+      <div id="tab-container">
+        <ul class="select-item">
+        </ul>
+      </div>
+
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p></p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>
