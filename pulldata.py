@@ -80,10 +80,10 @@ def getPatchData(patch, name):
         for champion in Champions:
             dataJSON["Champions"].append(json.loads(champion.to_JSON()))
 
-        with open('Patch{0}DataChunk{1}.json'.format(name,ch), 'w') as fp:
+        with open('chunks/Patch{0}DataChunk{1}.json'.format(name,ch), 'w') as fp:
             fp.write(json.dumps(dataJSON, indent=4))
 
-        print("Successfully wrote data to Patch{0}DataChunk{1}.json".format(name,ch))
+        print("Successfully wrote data to chunks/Patch{0}DataChunk{1}.json".format(name,ch))
         print(error)
 
 

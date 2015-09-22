@@ -513,7 +513,7 @@ def processPatch(patch):
             }
         ] }
     for i in range(20):
-        f = open("Patch{0}DataChunk{1}.json".format(patch,i+1), 'r')
+        f = open("chunks/Patch{0}DataChunk{1}.json".format(patch,i+1), 'r')
         rawdata = json.load(f)
         for ingredient in rawdata["IngredientItems"]:
             for item in intermediate["Items"]:
@@ -615,7 +615,7 @@ def processPatch(patch):
                         r = requests.get("https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item/{0}/?api_key=f2b4dbcc-3a94-4732-9e37-bed4a5f05e63&itemData=image".format(item))
                         data["Images"][item] = "http://ddragon.leagueoflegends.com/cdn/5.16.1/img/item/{0}".format(r.json()["image"]["full"])
 
-    with open('Patch{0}AggregateData.json'.format(patch), 'w') as fp:
+    with open('final/Patch{0}AggregateData.json'.format(patch), 'w') as fp:
         fp.write(json.dumps(data, indent=4))
 
 
