@@ -3,6 +3,7 @@ import io
 from operator import itemgetter
 import datetime
 import requests
+import os
 
 
 def processPatch(patch):
