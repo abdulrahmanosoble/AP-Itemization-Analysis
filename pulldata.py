@@ -80,6 +80,7 @@ def getPatchData(patch, name):
         for champion in Champions:
             dataJSON["Champions"].append(json.loads(champion.to_JSON()))
 
+        os.makedirs('chunks', exist_ok=True)
         with open('chunks/Patch{0}DataChunk{1}.json'.format(name,ch), 'w') as fp:
             fp.write(json.dumps(dataJSON, indent=4))
 

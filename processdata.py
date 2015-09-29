@@ -615,6 +615,7 @@ def processPatch(patch):
                         r = requests.get("https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item/{0}/?api_key=f2b4dbcc-3a94-4732-9e37-bed4a5f05e63&itemData=image".format(item))
                         data["Images"][item] = "http://ddragon.leagueoflegends.com/cdn/5.16.1/img/item/{0}".format(r.json()["image"]["full"])
 
+    os.makedirs('final', exist_ok=True)
     with open('final/Patch{0}AggregateData.json'.format(patch), 'w') as fp:
         fp.write(json.dumps(data, indent=4))
 
